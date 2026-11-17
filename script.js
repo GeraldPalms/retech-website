@@ -810,6 +810,21 @@ document.getElementById("backToRepairDetails")?.addEventListener("click", () => 
     showSlide(repairDetailsIndex);
 });
 
+const pickupDateInput = document.getElementById("pickupDate");
+
+document.querySelector("#screen17 .date-input").addEventListener("click", (event) => {
+    if (event.target === pickupDateInput) {
+        return;
+    }
+
+    if (typeof pickupDateInput.showPicker === "function") {
+        pickupDateInput.showPicker();
+        return;
+    }
+
+    pickupDateInput.focus();
+    pickupDateInput.click();
+});
 
 // Open Messages from Repair Shop Details
 document.getElementById("messageRepairShopBtn")?.addEventListener("click", () => {
