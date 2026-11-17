@@ -80,16 +80,6 @@ skipBtn.addEventListener("click", () => {
 });
 
 
-// Select onboarding service cards
-choiceCards.forEach((card) => {
-
-    card.addEventListener("click", () => {
-        card.classList.toggle("selected");
-    });
-
-});
-
-
 // Open registration screen
 document.getElementById("goToRegister").addEventListener("click", (event) => {
     event.preventDefault();
@@ -281,7 +271,7 @@ devicePhotos.addEventListener("change", () => {
 // Calculate and display the estimated trade-in value
 function calculateTradeInValue() {
 
-    const brand = document.getElementById("deviceBrand").value;
+    const brand = getBrandValue(sellBrandControls);
     const model = document.getElementById("deviceModel").value;
 
     const condition = document.querySelector(
@@ -532,7 +522,7 @@ deliveryContinueBtn.addEventListener("click", () => {
     }
 
     // Get device information
-    const brand = document.getElementById("deviceBrand").value;
+    const brand = getBrandValue(sellBrandControls);
     const model = document.getElementById("deviceModel").value;
 
     const conditionInput =
@@ -607,7 +597,7 @@ document.getElementById("backToDeliveryBtn").addEventListener("click", () => {
 document.getElementById("postListingBtn").addEventListener("click", () => {
 
     // Get device information
-    const brand = document.getElementById("deviceBrand").value;
+    const brand = getBrandValue(sellBrandControls);
     const model = document.getElementById("deviceModel").value;
 
     // Get the selling price
@@ -639,11 +629,9 @@ document.getElementById("postListingBtn").addEventListener("click", () => {
 });
 
 
-// View Listing - demo action
+// View the marketplace after posting a listing
 document.getElementById("viewListingBtn").addEventListener("click", () => {
-
-    alert("This listing preview is not connected to the marketplace yet.");
-
+    showSlide(marketplaceIndex);
 });
 
 
@@ -867,6 +855,93 @@ document.getElementById("backToHome").addEventListener("click", () => {
 });
 
 
+const brandsByCategory = {
+    Phone: [
+        "Apple", "Samsung", "Huawei", "Xiaomi", "Redmi", "POCO", "OPPO",
+        "vivo", "realme", "OnePlus", "Google", "Motorola", "Nokia",
+        "Infinix", "TECNO", "ASUS", "HONOR", "Sony", "Nothing", "ZTE",
+        "Lenovo", "Other"
+    ],
+    Laptop: [
+        "Acer", "ASUS", "Lenovo", "HP", "Dell", "Apple", "MSI",
+        "Microsoft Surface", "Huawei", "Samsung", "Gigabyte", "Razer", "LG",
+        "Toshiba", "Fujitsu", "Dynabook", "Chuwi", "VAIO", "Avita", "Other"
+    ],
+    Tablet: [
+        "Apple", "Samsung", "Lenovo", "Huawei", "Xiaomi", "Redmi", "HONOR",
+        "Amazon Fire", "Microsoft Surface", "TCL", "Nokia", "realme", "OPPO",
+        "OnePlus", "Alldocube", "Teclast", "Other"
+    ],
+    Accessories: [
+        "Logitech", "Sony", "JBL", "Anker", "Razer", "HyperX", "Corsair",
+        "Bose", "Apple", "Samsung", "Soundcore", "SteelSeries", "Baseus",
+        "UGREEN", "Belkin", "Sennheiser", "Audio-Technica", "Beats",
+        "Redragon", "Rapoo", "ASUS", "Other"
+    ],
+    Television: [
+        "Samsung", "LG", "Sony", "TCL", "Hisense", "Xiaomi", "Panasonic",
+        "Sharp", "Toshiba", "Philips", "Skyworth", "Haier", "Devant",
+        "Coocaa", "AOC", "Changhong", "Other"
+    ],
+    Other: ["Other"]
+};
+
+const sellBrandControls = {
+    select: document.getElementById("deviceBrand"),
+    otherField: document.getElementById("deviceBrandOtherField"),
+    otherInput: document.getElementById("deviceBrandOther")
+};
+
+const tradeInBrandControls = {
+    select: document.getElementById("tradeInBrand"),
+    otherField: document.getElementById("tradeInBrandOtherField"),
+    otherInput: document.getElementById("tradeInBrandOther")
+};
+
+function resetBrandDropdown(controls, category) {
+    const brands = brandsByCategory[category];
+    if (!brands) {
+        throw new Error("No brand list configured for device category: " + category);
+    }
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Select a brand";
+    placeholder.disabled = true;
+    placeholder.selected = true;
+
+    controls.select.replaceChildren(placeholder);
+
+    brands.forEach((brand) => {
+        const option = document.createElement("option");
+        option.value = brand;
+        option.textContent = brand;
+        controls.select.appendChild(option);
+    });
+
+    controls.otherField.hidden = true;
+    controls.otherInput.value = "";
+    controls.otherInput.required = false;
+}
+
+function getBrandValue(controls) {
+    return controls.select.value === "Other"
+        ? controls.otherInput.value.trim()
+        : controls.select.value;
+}
+
+[sellBrandControls, tradeInBrandControls].forEach((controls) => {
+    controls.select.addEventListener("change", () => {
+        const isOther = controls.select.value === "Other";
+        controls.otherField.hidden = !isOther;
+        controls.otherInput.required = isOther;
+
+        if (!isOther) {
+            controls.otherInput.value = "";
+        }
+    });
+});
+
 // Select a selling category
 const sellCategories = document.querySelectorAll(".sell-category");
 const sellContinueBtn = document.getElementById("sellContinueBtn");
@@ -883,6 +958,7 @@ sellCategories.forEach((category) => {
         category.classList.add("selected");
 
         selectedSellCategory = category.dataset.category;
+        resetBrandDropdown(sellBrandControls, selectedSellCategory);
         sellContinueBtn.disabled = false;
     });
 });
@@ -905,6 +981,23 @@ document.getElementById("backFromTradeIn").addEventListener("click", () => {
     showSlide(homeIndex);
 });
 
+let selectedTradeInCategory = "";
+const tradeInCategories = document.querySelectorAll(".trade-in-category");
+
+tradeInCategories.forEach((category) => {
+    category.addEventListener("click", () => {
+        tradeInCategories.forEach((item) => {
+            item.classList.remove("selected");
+        });
+
+        category.classList.add("selected");
+        selectedTradeInCategory =
+            category.dataset.category === "Others"
+                ? "Other"
+                : category.dataset.category;
+        resetBrandDropdown(tradeInBrandControls, selectedTradeInCategory);
+    });
+});
 
 
 
@@ -912,7 +1005,7 @@ document.getElementById("backFromTradeIn").addEventListener("click", () => {
 document.getElementById("tradeInContinueBtn").addEventListener("click", () => {
 
     // Get information entered by the user
-    const brand = document.getElementById("tradeInBrand").value;
+    const brand = getBrandValue(tradeInBrandControls);
     const model = document.getElementById("tradeInModel").value.trim();
 
     const condition = document.querySelector(
@@ -922,7 +1015,8 @@ document.getElementById("tradeInContinueBtn").addEventListener("click", () => {
     const usage = document.getElementById("tradeInUsage").value;
 
     // Check if required information is complete
-    if (model === "" || !condition || usage === "") {
+    if (!selectedTradeInCategory || brand === "" ||
+        model === "" || !condition || usage === "") {
         alert("Please complete your device information first.");
         return;
     }
@@ -1144,12 +1238,12 @@ document.getElementById("dataSecuredBtn").addEventListener("click", () => {
 
     // Match each category to its exported image
     const recycleImages = {
-        "Phone": "./assets/recycle-phone.png",
-        "Batteries": "./assets/recycle-batteries.png",
-        "Charger": "./assets/recycle-charger.png",
-        "Laptop": "./assets/recycle-laptop.png",
-        "TVs": "./assets/recycle-tv.png",
-        "Other": "./assets/recycle-other.png"
+        "Phone": "./assets/phone.png",
+        "Batteries": "./assets/batteries.png",
+        "Charger": "./assets/charger.png",
+        "Laptop": "./assets/laptop.png",
+        "TVs": "./assets/television.png",
+        "Other": "./assets/other.png"
     };
 
     selectedCategories.forEach(category => {
@@ -1190,7 +1284,7 @@ document.getElementById("dataSecuredBtn").addEventListener("click", () => {
 
     methodImage.src = methodName === "Drop-Off"
         ? "./assets/drop-off.png"
-        : "./assets/pickup-truck.png";
+        : "./assets/pickup.png";
 
     methodImage.alt = methodName;
 

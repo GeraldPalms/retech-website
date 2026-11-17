@@ -185,6 +185,7 @@ body {
     color: #078B16;
     font-family: inherit;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     transition: 0.2s ease;
 }
 
@@ -443,6 +444,15 @@ body {
     font-size: 18px;
 }
 
+.login-icon {
+    width: 19px;
+    height: 19px;
+    min-width: 19px;
+    flex-shrink: 0;
+    display: block;
+    color: #333333;
+}
+
 .login-input input {
     flex: 1;
     width: 100%;
@@ -452,6 +462,7 @@ body {
     font-size: 13px;
     font-family: inherit;
     background: transparent;
+    text-decoration: none;
 }
 
 .login-input button {
@@ -461,21 +472,18 @@ body {
     cursor: pointer;
 }
 
-.login-icon {
+.password-eye-icon {
     width: 19px;
     height: 19px;
-    min-width: 19px;
-    color: #333333;
     display: block;
+    color: #555;
 }
 
-/* Forgot password */
-.forgot-password {
-    align-self: flex-end;
-    margin-top: -7px;
-    color: #168D36;
-    font-size: 13px;
-    text-decoration: none;
+.login-input button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 /* Login button */
@@ -524,10 +532,13 @@ body {
     cursor: pointer;
 }
 
-.google-btn strong {
-    color: #4285F4;
-    font-size: 20px;
+.google-logo {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
     margin-right: 9px;
+    flex-shrink: 0;
 }
 
 /* Create account */
@@ -535,6 +546,10 @@ body {
     margin-top: 33px;
     font-size: 13px;
     text-align: center;
+}
+
+.forgot-password {
+    text-decoration: none;
 }
 
 .create-account a {
@@ -655,10 +670,17 @@ body {
     width: 19px;
     height: 19px;
     min-width: 19px;
+    flex-shrink: 0;
     color: #333333;
     display: block;
 }
 
+.password-eye-icon {
+    width: 19px;
+    height: 19px;
+    display: block;
+    color: #555;
+}
 
 .register-input input {
     flex: 1;
@@ -1035,9 +1057,12 @@ body {
     overflow: hidden;
 }
 
-.shop-placeholder svg {
+.shop-placeholder img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
 }
 
 .shop-information {
@@ -1112,15 +1137,17 @@ body {
     cursor: pointer;
 }
 
-.nav-item svg {
+.nav-item img {
     width: 35px;
     height: 35px;
+    object-fit: contain;
+    display: block;
 }
 
 .nav-item span {
     color: black;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .nav-item.active {
@@ -1135,7 +1162,7 @@ body {
     width: 70%;
     height: 8px;
     border-radius: 10px;
-    background: #078B16;
+    background: #000000;
 }
 
 /* Home page on small phones */
@@ -1367,6 +1394,10 @@ body {
     object-fit: contain;
 }
 
+#screen7 .sell-category[data-category="Tablet"] .category-icon img {
+    transform: translateY(-4px);
+}
+
 
 /* =================================
    SCREEN 8 - DEVICE INFORMATION
@@ -1447,6 +1478,21 @@ body {
 
 .device-field select {
     cursor: pointer;
+}
+
+.brand-other-field[hidden] {
+    display: none;
+}
+
+.brand-other-field:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.brand-other-field label {
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .model-field {
@@ -1804,7 +1850,7 @@ body {
 .estimate-price h1 {
     font-size: clamp(29px, 8vw, 36px);
     font-weight: 700;
-    color: #078B16;
+    color: #000;
     white-space: nowrap;
     letter-spacing: 0;
 }
@@ -2061,10 +2107,10 @@ body {
 /* Buttons */
 .set-price-actions {
     width: 80%;
-    margin: auto auto 5px;
+    margin: 65px auto 5px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 #setPriceContinueBtn,
@@ -2186,6 +2232,14 @@ body {
     text-align: center;
 }
 
+.delivery-icon img {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
 .delivery-card-content {
     min-width: 0;
     display: flex;
@@ -2221,10 +2275,11 @@ body {
 .delivery-address-section select {
     width: 100%;
     height: 47px;
-    padding: 0 12px;
+    padding: 0 12px 0 36px;
     border: 1px solid #111;
     border-radius: 0;
-    background: white;
+    background: white url("./assets/location-icon.png") no-repeat 10px center;
+    background-size: 18px 18px;
     color: #078B16;
     font-family: inherit;
     font-size: 15px;
@@ -2432,7 +2487,7 @@ body {
 /* Post button */
 .review-actions {
     width: 80%;
-    margin: auto auto 5px;
+    margin: 40px auto 5px;
 }
 
 #postListingBtn {
@@ -2496,9 +2551,10 @@ body {
     flex-shrink: 0;
 }
 
-.listing-success-icon svg {
+.listing-success-icon img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 /* Success message */
@@ -2586,7 +2642,7 @@ body {
 /* Action buttons */
 .posted-listing-actions {
     width: 80%;
-    margin: auto auto 5px;
+    margin: 40px auto 5px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -3194,7 +3250,8 @@ body {
 
 #screen17 .schedule-input select,
 #screen17 .schedule-input input {
-    width: 100%;
+    flex: 1;
+    width: auto;
     height: 100%;
     min-width: 0;
     border: none;
@@ -3205,15 +3262,27 @@ body {
     color: #111111;
 }
 
+#screen17 .schedule-control-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
 /* Location */
 
 #screen17 .location-input {
     gap: 12px;
 }
 
-#screen17 .location-pin {
-    color: #079B4B;
-    font-size: 20px;
+#screen17 .date-input input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+#screen17 .time-input select {
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 /* Spacing between fields */
@@ -3552,7 +3621,7 @@ body {
 #estimatedTradeInScreen .estimated-price {
     margin: 45px 0 25px;
     text-align: center;
-    color: #078B16;
+    color: #000;
     font-size: 48px;
     font-weight: 600;
 }
@@ -3629,7 +3698,7 @@ body {
 #estimatedTradeInScreen .estimated-continue-btn {
     width: 85%;
     min-height: 44px;
-    margin: auto auto 5px;
+    margin: 35px auto 5px;
     flex-shrink: 0;
     border: none;
     border-radius: 5px;
@@ -3779,7 +3848,7 @@ body {
 #confirmTradeInScreen .confirm-estimated-section h2 {
     margin: 12px 0 3px;
     text-align: center;
-    color: #078B16;
+    color: #000;
     font-size: 32px;
     font-weight: 600;
 }
@@ -4031,7 +4100,7 @@ body {
 
 #tradeInStatusScreen .trade-status-device-details h2 {
     margin: 0;
-    color: #078B16;
+    color: #000;
     font-size: 30px;
     font-weight: 600;
 }
@@ -4106,14 +4175,14 @@ body {
     margin-right: auto;
 }
 
-/* Enlarge handshake illustration */
+/* Trade-In status illustration */
 #tradeInStatusScreen .trade-status-illustration {
-    margin: 15px 0 8px;
+    margin: 0 0 8px;
 }
 
 #tradeInStatusScreen .trade-status-illustration img {
-    width: 260px;
-    height: 190px;
+    width: 118px;
+    height: 118px;
     object-fit: contain;
 }
 
@@ -4125,14 +4194,14 @@ body {
 
 /* Description */
 #tradeInStatusScreen .trade-status-message {
-    margin: 22px 10px 14px;
+    margin: 12px 10px 10px;
     font-size: 15px;
 }
 
 /* Device card */
 #tradeInStatusScreen .trade-status-device-card {
     width: 100%;
-    min-height: 210px;
+    min-height: 160px;
     padding: 12px;
     gap: 10px;
 }
@@ -4144,7 +4213,7 @@ body {
 
 #tradeInStatusScreen .trade-status-device-image img {
     max-width: 125px;
-    height: 145px;
+    height: 120px;
 }
 
 /* Device name and price */
@@ -4218,26 +4287,28 @@ body {
 #confirmTradeInScreen .handover-options {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    gap: 10px;
 }
 
 #confirmTradeInScreen .handover-card {
     width: 100%;
-    height: 116px;
-    min-height: 116px;
-    padding: 8px 6px;
+    height: 86px;
+    min-height: 86px;
+    padding: 6px 4px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 /* Illustration size and position */
 
 #confirmTradeInScreen .handover-icon {
-    width: 42px;
-    height: 55px;
+    width: 38px;
+    height: 42px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -4245,8 +4316,8 @@ body {
 }
 
 #confirmTradeInScreen .handover-icon img {
-    width: 42px;
-    height: 55px;
+    width: 38px;
+    height: 42px;
     object-fit: contain;
 }
 
@@ -4259,7 +4330,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 9px;
+    gap: 5px;
+}
+
+#confirmTradeInScreen .handover-info strong {
+    font-size: 12px;
+    white-space: nowrap;
 }
 
 #confirmTradeInScreen .handover-info strong {
@@ -4600,7 +4676,7 @@ body {
 #dataProtectionScreen #dataSecuredBtn {
     width: 85%;
     min-height: 43px;
-    margin: auto auto 15px;
+    margin: 25px auto 15px;
     flex-shrink: 0;
     border: none;
     border-radius: 5px;
@@ -4828,9 +4904,10 @@ body {
     border-right: 1px solid #888888;
 }
 
-#recycleConfirmationScreen .recycle-confirm-date-icon svg {
+#recycleConfirmationScreen .recycle-confirm-date-icon img {
     width: 35px;
     height: 35px;
+    object-fit: contain;
 }
 
 #recycleConfirmationScreen .recycle-confirm-date-card strong {
@@ -4849,7 +4926,7 @@ body {
 #recycleConfirmationScreen #viewRecyclingStatusBtn {
     width: 85%;
     min-height: 43px;
-    margin: auto auto 10px;
+    margin: 20px auto 10px;
     flex-shrink: 0;
     border: none;
     border-radius: 5px;
@@ -6456,7 +6533,7 @@ body {
     margin: 0 0 13px;
     font-size: 15px;
     font-weight: 600;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .product-details-price {
@@ -6496,7 +6573,9 @@ body {
 }
 
 .feature-icon {
-    font-size: 19px;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
 /* SELLER STATISTICS */
@@ -6631,7 +6710,8 @@ body {
 
 /* Product image and information */
 .product-main-info {
-    gap: 16px;
+    gap: 8px;
+    margin-left: -8px;
 }
 
 /* Condition and storage */
@@ -6976,19 +7056,13 @@ body {
     width: 142px;
     height: 142px;
     margin: 7px auto 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #00c900;
     flex-shrink: 0;
 }
 
-.order-success-icon svg {
-    width: 100px;
-    height: 100px;
+.order-success-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* CONFIRMATION MESSAGE */
@@ -7577,6 +7651,7 @@ body {
     border-radius: 50%;
     background: #008000;
     color: #ffffff;
+    overflow: hidden;
 
     font-size: 31px;
     font-weight: 600;
@@ -7588,6 +7663,13 @@ body {
     height: 100%;
     object-fit: contain;
     display: block;
+}
+
+/* Make Special Offer icon smaller and centered */
+.notification-card[data-type="offer"] .notification-icon img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
 /* NOTIFICATION TEXT */
@@ -7626,3 +7708,4 @@ body {
     display: flex !important;
     flex-direction: column !important;
 }
+

@@ -132,7 +132,7 @@
             <section class="slide screen-three" id="screen3">
 
                 <div class="third-illustration">
-                    <img src="./assets/third-illustration.png"
+                    <img src="./assets/onboarding-recycle.png"
                          alt="ReTech illustration">
                 </div>
 
@@ -140,8 +140,9 @@
                     <h1>Give your tech another life.</h1>
 
                     <p>
-                        A simple and convenient way to manage
-                        your old electronics.
+                        A simple and convenient way <br>
+                        to manage your old electronics.
+                        
                     </p>
                 </div>
 
@@ -190,15 +191,40 @@
     <!-- PASSWORD -->
     <div class="login-input">
 
-        <span>♙</span>
+        <svg class="login-icon"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <rect x="5" y="10" width="14" height="11" rx="2"/>
+    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    <circle cx="12" cy="15" r="1"/>
+</svg>
 
         <input type="password"
                id="passwordInput"
                placeholder="Password"
                required>
 
-        <button type="button"
-                id="togglePassword">◉</button>
+        <button type="button" id="togglePassword" aria-label="Show password">
+
+    <svg class="password-eye-icon"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+        <circle cx="12" cy="12" r="3"/>
+
+    </svg>
+
+</button>
 
     </div>
 
@@ -219,10 +245,20 @@
                     <span></span>
                 </div>
 
-                <button type="button" class="google-btn">
-                    <strong>G</strong>
-                    Continue with google
-                </button>
+                
+<button type="button" class="google-btn">
+    <svg class="google-logo"
+         viewBox="0 0 48 48"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true">
+        <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-15Z"/>
+        <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.6-5.1c-1.8 1.2-4.1 2-6.9 2-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"/>
+        <path fill="#FBBC05" d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3Z"/>
+        <path fill="#EA4335" d="M24 12.1c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6.1 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3c1.6-4.8 6.1-8.3 11.4-8.3Z"/>
+    </svg>
+    Continue with Google
+</button>
+
 
                 
 <p class="create-account">
@@ -275,29 +311,85 @@
             </div>
         </div>
 
-        <!-- PASSWORD -->
-        <div class="register-field">
-            <label for="registerPassword">Password</label>
-            <div class="register-input">
-                <span>♙</span>
-                <input type="password" id="registerPassword"
-                       placeholder="Password" required>
-                <button type="button" class="password-toggle"
-                        data-target="registerPassword">◉</button>
-            </div>
-        </div>
+        
+<!-- PASSWORD -->
+<div class="register-field">
+    <label for="registerPassword">Password</label>
+    <div class="register-input">
 
-        <!-- CONFIRM PASSWORD -->
-        <div class="register-field">
-            <label for="confirmPassword">Confirm Password</label>
-            <div class="register-input">
-                <span>♙</span>
-                <input type="password" id="confirmPassword"
-                       placeholder="Confirm Password" required>
-                <button type="button" class="password-toggle"
-                        data-target="confirmPassword">◉</button>
-            </div>
-        </div>
+        <svg class="register-icon"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="5" y="10" width="14" height="11" rx="2"/>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            <circle cx="12" cy="15" r="1"/>
+        </svg>
+
+        <input type="password" id="registerPassword"
+               placeholder="Password" required>
+
+        <button type="button" class="password-toggle"
+                data-target="registerPassword"
+                aria-label="Show password">
+            <svg class="password-eye-icon"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+
+    </div>
+</div>
+
+
+        
+<!-- CONFIRM PASSWORD -->
+<div class="register-field">
+    <label for="confirmPassword">Confirm Password</label>
+    <div class="register-input">
+
+        <svg class="register-icon"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="5" y="10" width="14" height="11" rx="2"/>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            <circle cx="12" cy="15" r="1"/>
+        </svg>
+
+        <input type="password" id="confirmPassword"
+               placeholder="Confirm Password" required>
+
+        <button type="button" class="password-toggle"
+                data-target="confirmPassword"
+                aria-label="Show password">
+            <svg class="password-eye-icon"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+
+    </div>
+</div>
+
 
         <!-- TERMS AND CONDITIONS -->
         <label class="terms-label">
@@ -367,13 +459,13 @@
         <div class="home-choice-grid">
 
             <button class="home-choice-card" id="openSell">
-                <img src="./assets/home-sell.png" alt="">
+                <img src="./assets/sell.svg" alt="">
                 <span class="home-choice-name">Sell</span>
                 <small>Select your old devices</small>
             </button>
 
             <button class="home-choice-card" id="openTradeIn" type="button">
-                <img src="./assets/home-tradein.png" alt="">
+                <img src="./assets/Trade-in.svg" alt="">
                 <span class="home-choice-name">Trade-in</span>
                 <small>Exchange your device</small>
             </button>
@@ -385,7 +477,7 @@
             </button>
 
             <button class="home-choice-card" id="openRecycle" type="button">
-                <img src="./assets/home-recycle.png" alt="">
+                <img src="./assets/Recycle.svg" alt="">
                 <span class="home-choice-name">Recycle</span>
                 <small>Dispose properly</small>
             </button>
@@ -404,18 +496,7 @@
         <div class="nearby-card">
 
             <div class="shop-placeholder" aria-label="Repair shop illustration">
-                <svg viewBox="0 0 100 80" fill="none">
-                    <rect x="8" y="27" width="84" height="46" rx="2"
-                          fill="#E5E5E5" stroke="#777"/>
-                    <path d="M5 27 14 8h72l9 19"
-                          fill="#D9E9E8" stroke="#777"/>
-                    <path d="M5 27h88v8H5z" fill="#4A9CA3"/>
-                    <path d="M15 35h70v38H15z" fill="#B7D3D1"/>
-                    <path d="M23 42h24v31H23z" fill="#526F73"/>
-                    <path d="M55 43h23v15H55z" fill="#EDF3F1"/>
-                    <path d="M55 63h23v10H55z" fill="#526F73"/>
-                    <path d="M8 27h84" stroke="#555" stroke-width="2"/>
-                </svg>
+                <img src="./assets/electronics-repair-shop.png" alt=" Electronics Repair Shop">
             </div>
 
             <div class="shop-information">
@@ -433,51 +514,27 @@
     <nav class="home-navigation" aria-label="Main navigation">
 
         <button class="nav-item active" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 11 9-8 9 8"/>
-                <path d="M5 10v11h14V10"/>
-                <path d="M9 21v-7h6v7"/>
-            </svg>
+            <img src="./assets/nav-home.svg" alt="Home">
             <span>Home</span>
         </button>
 
         <button class="nav-item" id="openMarketplaceFromHomeBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.7"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 10h18v11H3z"/>
-                <path d="M2 10 5 4h14l3 6"/>
-                <path d="M7 14v7M12 14v7M17 14v7"/>
-            </svg>
+            <img src="./assets/nav-market.svg" alt="Market">
             <span>Market</span>
         </button>
 
         <button class="nav-item" id="openActivityFromHomeBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2.5"
-                 stroke-linecap="round">
-                <path d="M5 5h14M5 12h14M5 19h14"/>
-            </svg>
+            <img src="./assets/nav-activity.svg" alt="Activity">
             <span>Activity</span>
         </button>
 
         <button class="nav-item" id="openMessagesBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/>
-                <path d="M8 12h.01M12 12h.01M16 12h.01"/>
-            </svg>
+            <img src="./assets/nav-messages.svg" alt="Messages">
             <span>Messages</span>
         </button>
 
         <button class="nav-item" id="openProfileBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="8" r="5"/>
-                <path d="M3 22a9 9 0 0 1 18 0z"/>
-            </svg>
+            <img src="./assets/nav-profile.svg" alt="Profile">
             <span>Profile</span>
         </button>
 
@@ -509,7 +566,7 @@
     <!-- Phone -->
     <button class="sell-category" type="button" data-category="Phone">
         <span class="category-icon">
-            <img src="./assets/sell-phone.png" alt="Phone">
+            <img src="./assets/phone.png" alt="Phone">
         </span>
         <span>Phone</span>
     </button>
@@ -517,7 +574,7 @@
     <!-- Laptop -->
     <button class="sell-category" type="button" data-category="Laptop">
         <span class="category-icon">
-            <img src="./assets/sell-laptop.png" alt="Laptop">
+            <img src="./assets/laptop.png" alt="Laptop">
         </span>
         <span>Laptop</span>
     </button>
@@ -525,7 +582,7 @@
     <!-- Tablet -->
     <button class="sell-category" type="button" data-category="Tablet">
         <span class="category-icon">
-            <img src="./assets/sell-tablet.png" alt="Tablet">
+            <img src="./assets/tablet.png" alt="Tablet">
         </span>
         <span>Tablet</span>
     </button>
@@ -533,7 +590,7 @@
     <!-- Accessories -->
     <button class="sell-category" type="button" data-category="Accessories">
         <span class="category-icon">
-            <img src="./assets/sell-accessories.png" alt="Accessories">
+            <img src="./assets/accessories.png" alt="Accessories">
         </span>
         <span>Accessories</span>
     </button>
@@ -541,7 +598,7 @@
     <!-- Television -->
     <button class="sell-category" type="button" data-category="Television">
         <span class="category-icon">
-            <img src="./assets/sell-television.png" alt="Television">
+            <img src="./assets/television.png" alt="Television">
         </span>
         <span>Television</span>
     </button>
@@ -549,7 +606,7 @@
     <!-- Other -->
     <button class="sell-category" type="button" data-category="Other">
         <span class="category-icon other-icon">
-            <img src="./assets/sell-other.png" alt="Other">
+            <img src="./assets/other.png" alt="Other">
         </span>
         <span>Other</span>
     </button>
@@ -593,14 +650,13 @@
         <div class="device-field">
             <label for="deviceBrand">Brand</label>
             <select id="deviceBrand" required>
-                <option value="Samsung" selected>Samsung</option>
-                <option value="Apple">Apple</option>
-                <option value="Huawei">Huawei</option>
-                <option value="Xiaomi">Xiaomi</option>
-                <option value="Oppo">Oppo</option>
-                <option value="Vivo">Vivo</option>
-                <option value="Other">Other</option>
+                <option value="" selected disabled>Select a category first</option>
             </select>
+            <div class="brand-other-field" id="deviceBrandOtherField" hidden>
+                <label for="deviceBrandOther">Enter brand</label>
+                <input type="text" id="deviceBrandOther"
+                       placeholder="Enter brand">
+            </div>
         </div>
 
         <!-- MODEL -->
@@ -905,7 +961,7 @@
                 class="delivery-card"
                 data-method="Pickup">
 
-            <span class="delivery-icon">🚚</span>
+            <span class="delivery-icon"><img src="./assets/pickup.png" alt="Pickup"></span>
 
             <span class="delivery-card-content">
                 <strong>PICKUP</strong>
@@ -918,7 +974,7 @@
                 class="delivery-card"
                 data-method="Drop-off">
 
-            <span class="delivery-icon">📍</span>
+            <span class="delivery-icon"><img src="./assets/drop-off.png" alt="Drop-off"></span>
 
             <span class="delivery-card-content">
                 <strong>DROP-OFF</strong>
@@ -1021,15 +1077,7 @@
 
     <!-- SUCCESS ICON -->
     <div class="listing-success-icon">
-        <svg viewBox="0 0 160 160" fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-            <circle cx="80" cy="80" r="80" fill="#00C000"/>
-            <path d="M37 80L65 109L124 48"
-                  stroke="white"
-                  stroke-width="16"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-        </svg>
+        <img src="./assets/Black-check.png" alt="Listing posted">
     </div>
 
     <!-- SUCCESS MESSAGE -->
@@ -1109,28 +1157,28 @@
 
     <button type="button" class="repair-category" data-category="Phone">
         <span class="repair-category-icon">
-            <img src="./assets/repair-phone.png" alt="Phone">
+            <img src="./assets/phone.png" alt="Phone">
         </span>
         <span>Phone</span>
     </button>
 
     <button type="button" class="repair-category" data-category="Laptop">
         <span class="repair-category-icon">
-            <img src="./assets/repair-laptop.png" alt="Laptop">
+            <img src="./assets/laptop.png" alt="Laptop">
         </span>
         <span>Laptop</span>
     </button>
 
     <button type="button" class="repair-category" data-category="Television">
         <span class="repair-category-icon">
-            <img src="./assets/repair-television.png" alt="Television">
+            <img src="./assets/television.png" alt="Television">
         </span>
         <span>Television</span>
     </button>
 
     <button type="button" class="repair-category" data-category="Electronics">
         <span class="repair-category-icon">
-            <img src="./assets/repair-electronics.png" alt="Electronics">
+            <img src="./assets/electronics.png" alt="Electronics">
         </span>
         <span>Electronics</span>
     </button>
@@ -1301,7 +1349,7 @@
         <div class="schedule-field location-field">
             <label for="pickupLocation">Pickup Location</label>
             <div class="schedule-input location-input">
-                <span class="location-pin">●</span>
+                <img class="schedule-control-icon" src="./assets/location-icon.png" alt="">
                 <select id="pickupLocation" required>
                     <option value="Panabo City" selected>Panabo City</option>
                     <option value="Tagum City">Tagum City</option>
@@ -1313,15 +1361,16 @@
         <!-- DATE -->
         <div class="schedule-field date-field">
             <label for="pickupDate">Date</label>
-            <div class="schedule-input">
+            <div class="schedule-input date-input">
                 <input type="date" id="pickupDate" required>
+                <img class="schedule-control-icon" src="./assets/calendar.png" alt="">
             </div>
         </div>
 
         <!-- TIME -->
         <div class="schedule-field time-field">
             <label for="pickupTime">Time</label>
-            <div class="schedule-input">
+            <div class="schedule-input time-input">
                 <select id="pickupTime" required>
                     <option value="10:00 AM - 12:00 PM" selected>
                         10:00 AM - 12:00 PM
@@ -1333,6 +1382,7 @@
                         3:00 PM - 5:00 PM
                     </option>
                 </select>
+                <img class="schedule-control-icon" src="./assets/clock.png" alt="">
             </div>
         </div>
 
@@ -1385,42 +1435,42 @@
     <div class="trade-in-category-grid">
         <button type="button" class="trade-in-category" data-category="Phone">
     <span class="trade-category-icon">
-        <img src="./assets/trade-phone.png" alt="Phone">
+        <img src="./assets/phone.png" alt="Phone">
     </span>
     <small>Phone</small>
 </button>
 
         <button type="button" class="trade-in-category" data-category="Laptop">
             <span class="trade-category-icon">
-                <img src="./assets/trade-laptop.png" alt="Laptop">
+                <img src="./assets/laptop.png" alt="Laptop">
             </span>
             <small>Laptop</small>
         </button>
 
         <button type="button" class="trade-in-category" data-category="Tablet">
             <span class="trade-category-icon">
-                <img src="./assets/trade-tablet.png" alt="Tablet">
+                <img src="./assets/tablet.png" alt="Tablet">
             </span>
             <small>Tablet</small>
         </button>
 
         <button type="button" class="trade-in-category" data-category="Accessories">
             <span class="trade-category-icon">
-                <img src="./assets/trade-accessories.png" alt="Accessories">
+                <img src="./assets/accessories.png" alt="Accessories">
             </span>
             <small>Accessories</small>
         </button>
 
         <button type="button" class="trade-in-category" data-category="Television">
             <span class="trade-category-icon">
-                <img src="./assets/trade-television.png" alt="Television">
+                <img src="./assets/television.png" alt="Television">
             </span>
             <small>Television</small>
         </button>
 
         <button type="button" class="trade-in-category" data-category="Others">
             <span class="trade-category-icon">
-                <img src="./assets/trade-others.png" alt="Others">
+                <img src="./assets/other.png" alt="Others">
             </span>
             <small>Others</small>
         </button>
@@ -1431,14 +1481,14 @@
     <div class="trade-in-form">
 
         <label for="tradeInBrand">Brand</label>
-        <select id="tradeInBrand">
-            <option value="Samsung">Samsung</option>
-            <option value="Apple">Apple</option>
-            <option value="Xiaomi">Xiaomi</option>
-            <option value="Oppo">Oppo</option>
-            <option value="Vivo">Vivo</option>
-            <option value="Other">Other</option>
+        <select id="tradeInBrand" required>
+            <option value="" selected disabled>Select a category first</option>
         </select>
+        <div class="brand-other-field" id="tradeInBrandOtherField" hidden>
+            <label for="tradeInBrandOther">Enter brand</label>
+            <input type="text" id="tradeInBrandOther"
+                   placeholder="Enter brand">
+        </div>
 
         <label for="tradeInModel">Model</label>
         <input type="text" id="tradeInModel" placeholder="Enter device model">
@@ -1601,7 +1651,7 @@
                     data-method="Pickup">
 
                 <div class="handover-icon">
-                    <img src="./assets/pickup-truck.png" alt="Pickup">
+                    <img src="./assets/pickup.png" alt="Pickup">
                 </div>
 
                 <div class="handover-info">
@@ -1658,14 +1708,13 @@
         </svg>
     </button>
 
-    <h2>Confirm Trade-In</h2>
     </div>
 
     <!-- Main Content -->
     <div class="trade-status-content">
 
         <div class="trade-status-illustration">
-            <img src="./assets/trade-in-success.png"
+            <img src="./assets/Trade-in.svg"
                  alt="Trade-in request submitted">
         </div>
 
@@ -1745,32 +1794,32 @@
     <div class="recycle-category-grid">
 
         <button type="button" class="recycle-category" data-category="Phone">
-            <img src="./assets/recycle-phone.png" alt="Phone">
+            <img src="./assets/phone.png" alt="Phone">
             <small>Phone</small>
         </button>
 
         <button type="button" class="recycle-category" data-category="Batteries">
-            <img src="./assets/recycle-batteries.png" alt="Batteries">
+            <img src="./assets/batteries.png" alt="Batteries">
             <small>Batteries</small>
         </button>
 
         <button type="button" class="recycle-category" data-category="Charger">
-            <img src="./assets/recycle-charger.png" alt="Charger">
+            <img src="./assets/charger.png" alt="Charger">
             <small>Charger</small>
         </button>
 
         <button type="button" class="recycle-category" data-category="Laptop">
-            <img src="./assets/recycle-laptop.png" alt="Laptop">
+            <img src="./assets/laptop.png" alt="Laptop">
             <small>Laptop</small>
         </button>
 
         <button type="button" class="recycle-category" data-category="TVs">
-            <img src="./assets/recycle-tv.png" alt="Television">
+            <img src="./assets/television.png" alt="Television">
             <small>TV's</small>
         </button>
 
         <button type="button" class="recycle-category" data-category="Other">
-            <img src="./assets/recycle-other.png" alt="Other electronics">
+            <img src="./assets/other.png" alt="Other electronics">
             <small>Other</small>
         </button>
 
@@ -1786,7 +1835,7 @@
             <button type="button" class="recycle-method"
                     data-method="Pickup">
 
-                <img src="./assets/pickup-truck.png" alt="Pickup">
+                <img src="./assets/pickup.png" alt="Pickup">
 
                 <strong>Pickup</strong>
 
@@ -1937,7 +1986,7 @@
         <div class="recycle-confirm-method-card">
 
             <img id="confirmedRecycleMethodIcon"
-                 src="./assets/pickup-truck.png"
+                 src="./assets/pickup.png"
                  alt="Selected disposal method">
 
             <strong id="confirmedRecycleMethod">Pickup</strong>
@@ -1947,13 +1996,7 @@
         <div class="recycle-confirm-date-card">
 
             <div class="recycle-confirm-date-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="1.8" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="16" rx="2"/>
-                    <path d="M16 3v4M8 3v4M3 10h18"/>
-                    <path d="M7 14h.01M12 14h.01M17 14h.01M7 17h.01M12 17h.01M17 17h.01"/>
-                </svg>
+                <img src="./assets/calendar.png" alt="">
             </div>
 
             <strong>Date</strong>
@@ -2124,61 +2167,31 @@
 
     <!-- HOME -->
     <button class="nav-item" id="profileHomeBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-            <path d="m3 11 9-8 9 8"/>
-            <path d="M5 10v11h14V10"/>
-            <path d="M9 21v-7h6v7"/>
-        </svg>
+        <img src="./assets/nav-home.svg" alt="Home">
         <span>Home</span>
     </button>
 
     <!-- MARKET -->
     <button class="nav-item" id="openActivityBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.7"
-             stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 10h18v11H3z"/>
-            <path d="M2 10 5 4h14l3 6"/>
-            <path d="M7 14v7M12 14v7M17 14v7"/>
-        </svg>
+        <img src="./assets/nav-market.svg" alt="Market">
         <span>Market</span>
     </button>
 
     <!-- ACTIVITY -->
     <button class="nav-item" id="openActivityFromProfileBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round">
-            <path d="M5 5h14M5 12h14M5 19h14"/>
-        </svg>
+        <img src="./assets/nav-activity.svg" alt="Activity">
         <span>Activity</span>
     </button>
 
     <!-- MESSAGES -->
     <button class="nav-item" id="profileMessagesBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
-                     8.5 8.5 0 0 1-7.6 4.7
-                     8.4 8.4 0 0 1-3.8-.9L3 21
-                     l1.9-5.7a8.4 8.4 0 0 1-.9-3.8
-                     8.5 8.5 0 0 1 4.7-7.6
-                     8.4 8.4 0 0 1 3.8-.9h.5
-                     a8.5 8.5 0 0 1 8 8z"/>
-            <path d="M8 12h.01M12 12h.01M16 12h.01"/>
-        </svg>
+        <img src="./assets/nav-messages.svg" alt="Messages">
         <span>Messages</span>
     </button>
 
     <!-- PROFILE -->
     <button class="nav-item active" type="button">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="8" r="5"/>
-            <path d="M3 22a9 9 0 0 1 18 0z"/>
-        </svg>
+        <img src="./assets/nav-profile.svg" alt="Profile">
         <span>Profile</span>
     </button>
 
@@ -2295,57 +2308,27 @@
     <nav class="home-navigation" aria-label="Main navigation">
 
         <button class="nav-item" id="messagesHomeBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 11 9-8 9 8"/>
-                <path d="M5 10v11h14V10"/>
-                <path d="M9 21v-7h6v7"/>
-            </svg>
+            <img src="./assets/nav-home.svg" alt="Home">
             <span>Home</span>
         </button>
 
         <button class="nav-item" id="messageMarketBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.7"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 10h18v11H3z"/>
-                <path d="M2 10 5 4h14l3 6"/>
-                <path d="M7 14v7M12 14v7M17 14v7"/>
-            </svg>
+            <img src="./assets/nav-market.svg" alt="Market">
             <span>Market</span>
         </button>
 
         <button class="nav-item" id="openActivityFromMessagesBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2.5"
-                 stroke-linecap="round">
-                <path d="M5 5h14M5 12h14M5 19h14"/>
-            </svg>
+            <img src="./assets/nav-activity.svg" alt="Activity">
             <span>Activity</span>
         </button>
 
         <button class="nav-item active" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
-                         8.5 8.5 0 0 1-7.6 4.7
-                         8.4 8.4 0 0 1-3.8-.9L3 21
-                         l1.9-5.7a8.4 8.4 0 0 1-.9-3.8
-                         8.5 8.5 0 0 1 4.7-7.6
-                         8.4 8.4 0 0 1 3.8-.9h.5
-                         a8.5 8.5 0 0 1 8 8z"/>
-                <path d="M8 12h.01M12 12h.01M16 12h.01"/>
-            </svg>
+            <img src="./assets/nav-messages.svg" alt="Messages">
             <span>Messages</span>
         </button>
 
         <button class="nav-item" id="messagesProfileBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="8" r="5"/>
-                <path d="M3 22a9 9 0 0 1 18 0z"/>
-            </svg>
+            <img src="./assets/nav-profile.svg" alt="Profile">
             <span>Profile</span>
         </button>
 
@@ -2449,53 +2432,27 @@
     <nav class="home-navigation" aria-label="Main navigation">
 
         <button class="nav-item" id="activityHomeBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 11 9-8 9 8"/>
-                <path d="M5 10v11h14V10"/>
-                <path d="M9 21v-7h6v7"/>
-            </svg>
+            <img src="./assets/nav-home.svg" alt="Home">
             <span>Home</span>
         </button>
 
         <button class="nav-item" id="activityMarketBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2">
-                <path d="M3 10h18v11H3z"/>
-                <path d="M2 10 5 4h14l3 6"/>
-                <path d="M7 14v7M12 14v7M17 14v7"/>
-            </svg>
+            <img src="./assets/nav-market.svg" alt="Market">
             <span>Market</span>
         </button>
 
         <button class="nav-item active" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2.5">
-                <path d="M5 5h14M5 12h14M5 19h14"/>
-            </svg>
+            <img src="./assets/nav-activity.svg" alt="Activity">
             <span>Activity</span>
         </button>
 
         <button class="nav-item" id="activityMessagesBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2">
-                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
-                         8.5 8.5 0 0 1-7.6 4.7
-                         8.4 8.4 0 0 1-3.8-.9L3 21
-                         l1.9-5.7a8.4 8.4 0 0 1-.9-3.8
-                         8.5 8.5 0 0 1 4.7-7.6
-                         8.4 8.4 0 0 1 3.8-.9h.5
-                         a8.5 8.5 0 0 1 8 8z"/>
-            </svg>
+            <img src="./assets/nav-messages.svg" alt="Messages">
             <span>Messages</span>
         </button>
 
         <button class="nav-item" id="activityProfileBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="8" r="5"/>
-                <path d="M3 22a9 9 0 0 1 18 0z"/>
-            </svg>
+            <img src="./assets/nav-profile.svg" alt="Profile">
             <span>Profile</span>
         </button>
 
@@ -2655,64 +2612,35 @@
 
         <!-- HOME -->
         <button class="nav-item" id="marketplaceHomeBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 11 9-8 9 8"/>
-                <path d="M5 10v11h14V10"/>
-                <path d="M9 21v-7h6v7"/>
-            </svg>
+            <img src="./assets/nav-home.svg" alt="Home">
             <span>Home</span>
         </button>
 
 
         <!-- MARKET -->
         <button class="nav-item active" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.7"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 10h18v11H3z"/>
-                <path d="M2 10 5 4h14l3 6"/>
-                <path d="M7 14v7M12 14v7M17 14v7"/>
-            </svg>
+            <img src="./assets/nav-market.svg" alt="Market">
             <span>Market</span>
         </button>
 
 
         <!-- ACTIVITY -->
         <button class="nav-item" id="marketplaceActivityBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2.5"
-                 stroke-linecap="round">
-                <path d="M5 5h14M5 12h14M5 19h14"/>
-            </svg>
+            <img src="./assets/nav-activity.svg" alt="Activity">
             <span>Activity</span>
         </button>
 
 
         <!-- MESSAGES -->
         <button class="nav-item" id="marketplaceMessagesBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
-                         8.5 8.5 0 0 1-7.6 4.7
-                         8.4 8.4 0 0 1-3.8-.9L3 21
-                         l1.9-5.7a8.4 8.4 0 0 1-.9-3.8
-                         8.5 8.5 0 0 1 4.7-7.6
-                         8.4 8.4 0 0 1 3.8-.9h.5
-                         a8.5 8.5 0 0 1 8 8z"/>
-            </svg>
+            <img src="./assets/nav-messages.svg" alt="Messages">
             <span>Messages</span>
         </button>
 
 
         <!-- PROFILE -->
         <button class="nav-item" id="marketplaceProfileBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="8" r="5"/>
-                <path d="M3 22a9 9 0 0 1 18 0z"/>
-            </svg>
+            <img src="./assets/nav-profile.svg" alt="Profile">
             <span>Profile</span>
         </button>
 
@@ -2785,12 +2713,12 @@
     <div class="product-features">
 
         <div>
-            <span class="feature-icon">👍</span>
+            <img class="feature-icon" src="./assets/good-job.png" alt="">
             <strong>Good Condition</strong>
         </div>
 
         <div>
-            <span class="feature-icon">▣</span>
+            <img class="feature-icon" src="./assets/sd-card.png" alt="">
             <strong>128GB</strong>
         </div>
 
@@ -2973,13 +2901,7 @@
 
     <!-- SUCCESS ICON -->
     <div class="order-success-icon">
-        <svg viewBox="0 0 100 100" fill="none">
-            <path d="M18 51 L39 73 L83 28"
-                  stroke="white"
-                  stroke-width="13"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-        </svg>
+        <img src="./assets/Black-check.png" alt="Order confirmed">
     </div>
 
 
@@ -3227,7 +3149,7 @@
         <!-- LISTING UPDATE -->
         <article class="notification-card" data-type="sell">
             <div class="notification-icon">
-                 <img src="./assets/notification-listing.png" alt="Listing Update">
+                 <img src="./assets/notification-listing.svg" alt="Listing Update">
             </div>
             <div class="notification-content">
                 <h3>Listing Update</h3>
@@ -3239,7 +3161,7 @@
         <!-- REPAIR UPDATE -->
         <article class="notification-card" data-type="repair">
             <div class="notification-icon">
-                 <img src="./assets/notification-repair.png" alt="Repair Update">
+                 <img src="./assets/notification-repair.svg" alt="Repair Update">
             </div>
             <div class="notification-content">
                 <h3>Repair Update</h3>
@@ -3251,7 +3173,7 @@
         <!-- RECYCLING UPDATE -->
         <article class="notification-card" data-type="recycle">
             <div class="notification-icon">
-                <img src="./assets/notification-recycle.png" alt="Recycling Update">
+                <img src="./assets/notification-recycle.svg" alt="Recycling Update">
             </div>
             <div class="notification-content">
                 <h3>Recycling Update</h3>
@@ -3263,7 +3185,7 @@
         <!-- TRADE-IN UPDATE -->
         <article class="notification-card" data-type="tradein">
             <div class="notification-icon">
-                <img src="./assets/notification-tradein.png" alt="Trade-In Update">
+                <img src="./assets/notification-tradein.svg" alt="Trade-In Update">
             </div>
             <div class="notification-content">
                 <h3>Trade-In Update</h3>
@@ -3275,7 +3197,7 @@
         <!-- SPECIAL OFFER -->
         <article class="notification-card" data-type="offer">
             <div class="notification-icon">
-                <img src="./assets/notification-offer.png" alt="Special Offer">
+                <img src="./assets/notification-offer.svg" alt="Special Offer">
             </div>
             <div class="notification-content">
                 <h3>Special Offer</h3>
